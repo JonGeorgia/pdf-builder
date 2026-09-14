@@ -1,0 +1,35 @@
+# Lokalisierung für Deutsch
+# Format: Schlüssel=Wert
+
+title=PDFuse
+select_folder=Ordner wählen
+attach_sources=Quellen an PDF anhängen
+generate_pdf=PDF erstellen
+select_pdf=PDF wählen
+import_pdf=Daten aus PDF extrahieren
+folder_not_selected=Ordner nicht ausgewählt!
+no_style_css=style.css nicht im gewählten Ordner gefunden!
+no_documents=Keine Dokumente gefunden. Stellen Sie sicher, dass .md-Dateien im Ordner vorhanden sind.
+pandoc_not_found=pandoc nicht gefunden. Bitte installieren Sie pandoc und fügen Sie es zum PATH hinzu.
+weasyprint_not_found=weasyprint nicht gefunden. Bitte installieren Sie weasyprint und fügen Sie es zum PATH hinzu.
+confirm_title=Bestätigung
+confirm_message={count} Dokumente zur Verarbeitung gefunden. Fortfahren?
+warning_title=Warnung
+success_title=Erfolg
+success_message=Fertig! {count} PDF-Dateien erstellt.
+error_title=Fehler
+about_title=Über
+mode_md_to_pdf=Text → PDF
+mode_pdf_to_md=PDF → Text
+import_success=Import abgeschlossen. Ordner erstellt: {folder}
+no_attachments=Dieses PDF enthält keine eingebetteten Quelldateien.\nEs kann nur Text extrahiert werden (Formatierung geht verloren).\n\nTextextraktion fortsetzen?
+attachments_found=Eingebettete Quelldateien gefunden. In Ordner wiederherstellen: {folder}?
+command_failed=Befehl wurde mit Code {code} beendet: {stderr}
+pdf_not_selected=Keine PDF-Datei ausgewählt!
+unpack_failed=Quelldateien konnten nicht entpackt werden.
+no_text_layer=Die PDF-Datei enthält keine eingebetteten Quellen oder Textebene. Nichts zu extrahieren.
+donate_title=Unterstützen Sie das Projekt:
+donate_boosty=🍵 Boosty: boosty.to/automatonlab
+donate_kofi=☕ Ko-fi: ko-fi.com/automatonlab
+
+about_text=PDFuse — ein Programm zur Generierung von PDF-Dokumenten aus Markdown-Dateien und zur Rückkonvertierung von PDF in Markdown.\nDas Programm ermöglicht das Erstellen und Bearbeiten von PDF-Dateien (Anleitungen, Lehrpläne, Bücher und andere Dokumente), indem die Markdown-Quelldateien in die erstellten PDF-Dokumente eingebettet werden, die bei Bedarf an Änderungen extrahiert werden können.\n\nHauptfunktionen:\n• Konvertierung von Markdown in PDF: mit benutzerdefinierten CSS-Stilen für die erstellten PDFs und automatischer Platzierung von Bildern, die sich im Ordner images befinden müssen und auf die in Markdown verwiesen wird. Der Stil wird in einer separaten CSS-Datei beschrieben, die im selben Ordner wie das Markdown-Dokument abgelegt wird.\n• Stapelverarbeitung: gleichzeitige Konvertierung mehrerer Markdown-Dateien in einem ausgewählten Ordner unter Anwendung eines einzigen in der CSS-Datei beschriebenen Stils auf alle.\n• Rückkonvertierung: vollständige Konvertierung mit Bildern und Stilen von PDF in Markdown (möglich, wenn das PDF mit PDFuse erstellt wurde) oder reine Textextraktion (für beliebige textenthaltende PDFs *(das Programm extrahiert keinen Text aus Dokumenten, die in Bilder umgewandelt wurden)).\n• Nutzung erstellter PDFs mit KI-Modellen: Die generierten PDF-Dokumente bleiben maschinenlesbar, was ihre Verwendung in RAG-Systemen (Retrieval-Augmented Generation) ermöglicht.\n• Sprachunterstützung: Russisch, Englisch, Deutsch und Französisch.

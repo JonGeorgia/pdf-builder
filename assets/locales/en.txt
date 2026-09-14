@@ -1,0 +1,35 @@
+# Localization for English
+# Format: key=value
+
+title=PDFuse
+select_folder=Select Folder
+attach_sources=Attach sources to PDF
+generate_pdf=Generate PDF
+select_pdf=Select PDF
+import_pdf=Extract Data from PDF
+folder_not_selected=Folder not selected!
+no_style_css=style.css not found in selected folder!
+no_documents=No documents found. Make sure there are .md files in the folder.
+pandoc_not_found=pandoc not found. Please install pandoc and add it to PATH.
+weasyprint_not_found=weasyprint not found. Please install weasyprint and add it to PATH.
+confirm_title=Confirm
+confirm_message=Found {count} documents. Continue?
+warning_title=Warning
+success_title=Success
+success_message=Done! {count} PDF files created.
+error_title=Error
+about_title=About
+mode_md_to_pdf=Text → PDF
+mode_pdf_to_md=PDF → Text
+import_success=Import completed. Folder created: {folder}
+no_attachments=This PDF has no attached source files.\nOnly plain text can be extracted (formatting will be lost).\n\nContinue with text extraction?
+attachments_found=Found attached source files. Restore to folder: {folder}?
+command_failed=Command exited with code {code}: {stderr}
+pdf_not_selected=No PDF file selected!
+unpack_failed=Failed to unpack source files.
+no_text_layer=PDF has no embedded sources or text layer. Nothing to extract.
+donate_title=Support the project:
+donate_boosty=🍵 Boosty: boosty.to/automatonlab
+donate_kofi=☕ Ko-fi: ko-fi.com/automatonlab
+
+about_text=PDFuse — a program for generating PDF documents from Markdown files and reverse conversion from PDF to Markdown.\nThe program allows you to create and edit PDF files (instructions, educational programs, books and other documents) by embedding their Markdown source files into the generated PDF documents, which can be extracted when changes to the PDF are needed.\n\nMain features:\n• Markdown to PDF conversion: with custom CSS styles for the generated PDFs, and automatic placement of images that must be located in the images folder, with links to them contained in the Markdown. The style is described in a separate CSS file placed in the same folder as the Markdown document.\n• Batch processing: conversion of multiple Markdown files in a selected folder simultaneously, applying a single style described in the CSS file to all.\n• Reverse conversion: full conversion with images and styles from PDF to Markdown (possible if the PDF was created by PDFuse), or text-only extraction (for any PDF containing text *(the program does not extract text from documents converted to images)).\n• Use of created PDFs with AI models: Generated PDF documents remain machine-readable, allowing their use in RAG systems (Retrieval-Augmented Generation).\n• Language support: Russian, English, German and French.

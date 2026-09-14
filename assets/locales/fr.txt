@@ -1,0 +1,35 @@
+# Localisation pour le français
+# Format: clé=valeur
+
+title=PDFuse
+select_folder=Choisir un dossier
+attach_sources=Joindre les sources au PDF
+generate_pdf=Générer le PDF
+select_pdf=Choisir un PDF
+import_pdf=Extraire les données du PDF
+folder_not_selected=Dossier non sélectionné !
+no_style_css=style.css introuvable dans le dossier sélectionné !
+no_documents=Aucun document trouvé. Assurez-vous qu'il y a des fichiers .md dans le dossier.
+pandoc_not_found=pandoc introuvable. Veuillez installer pandoc et l'ajouter au PATH.
+weasyprint_not_found=weasyprint introuvable. Veuillez installer weasyprint et l'ajouter au PATH.
+confirm_title=Confirmation
+confirm_message={count} documents trouvés. Continuer ?
+warning_title=Avertissement
+success_title=Succès
+success_message=Terminé ! {count} fichiers PDF créés.
+error_title=Erreur
+about_title=À propos
+mode_md_to_pdf=Texte → PDF
+mode_pdf_to_md=PDF → Texte
+import_success=Importation terminée. Dossier créé : {folder}
+no_attachments=Ce PDF ne contient pas de fichiers sources intégrés.\nSeul le texte peut être extrait (la mise en forme sera perdue).\n\nContinuer l'extraction de texte ?
+attachments_found=Fichiers sources intégrés trouvés. Restaurer dans le dossier : {folder} ?
+command_failed=La commande s'est terminée avec le code {code}: {stderr}
+pdf_not_selected=Aucun fichier PDF sélectionné!
+unpack_failed=Échec du décompression des fichiers sources.
+no_text_layer=Le PDF ne contient ni sources intégrées ni calque de texte. Rien à extraire.
+donate_title=Soutenir le projet :
+donate_boosty=🍵 Boosty: boosty.to/automatonlab
+donate_kofi=☕ Ko-fi: ko-fi.com/automatonlab
+
+about_text=PDFuse — un programme pour générer des documents PDF à partir de fichiers Markdown et la conversion inverse de PDF en Markdown.\nLe programme permet de créer et modifier des fichiers PDF (instructions, programmes éducatifs, livres et autres documents) en intégrant leurs fichiers sources Markdown dans les documents PDF créés, qui peuvent être extraits lorsque des modifications du PDF sont nécessaires.\n\nFonctions principales :\n• Conversion Markdown en PDF : avec des styles CSS personnalisés pour les PDF créés et placement automatique des images qui doivent se trouver dans le dossier images, avec des liens vers celles-ci contenus dans le Markdown. Le style est décrit dans un fichier CSS séparé placé dans le même dossier que le document Markdown.\n• Traitement par lots : conversion simultanée de plusieurs fichiers Markdown dans un dossier sélectionné, en appliquant à tous un seul style décrit dans le fichier CSS.\n• Conversion inverse : conversion complète avec images et styles de PDF en Markdown (possible si le PDF a été créé par PDFuse) ou extraction de texte uniquement (pour tout PDF contenant du texte *(le programme n'extrait pas le texte des documents convertis en images)).\n• Utilisation des PDF créés avec des modèles d'IA : Les documents PDF générés restent lisibles par machine, permettant leur utilisation dans les systèmes RAG (Retrieval-Augmented Generation).\n• Langues prises en charge : russe, anglais, allemand et français.
