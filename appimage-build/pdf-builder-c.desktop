@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=PDFuse
+GenericName=PDF Builder
+Comment=Build PDF from Markdown and extract sources back
+Exec=pdf-builder-c
+Icon=pdf-builder-c
+Categories=Office;Utility;
+Terminal=false
