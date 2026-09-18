@@ -184,6 +184,17 @@ static void update_language_buttons() {
 
 // Файл настроек лежит рядом с exe (в portable-папке)
 static gchar *get_settings_file(void) {
+    // Внутри AppImage переменная $APPIMAGE указывает на путь к .AppImage-файлу.
+    // Сохраняем settings.ini рядом с ним — в ту же папку, где лежит AppImage.
+    const gchar *appimage = g_getenv("APPIMAGE");
+    if (appimage && *appimage) {
+        gchar *dir = g_path_get_dirname(appimage);
+        gchar *file = g_build_filename(dir, "settings.ini", NULL);
+        g_free(dir);
+        return file;
+    }
+
+    // Обычный режим (разработка, portable без AppImage) — рядом с exe
     gchar *exe_dir = get_exe_dir();
     gchar *file = g_build_filename(exe_dir, "settings.ini", NULL);
     g_free(exe_dir);
