@@ -1143,7 +1143,7 @@ static void generate_pdf_cb(GtkWidget *widget, gpointer data) {
             g_free(content);
         }
         // Вызываем pandoc
-        const gchar *pandoc_argv[] = {pandoc_path, temp_md, "-o", html_path, NULL};
+        const gchar *pandoc_argv[] = {pandoc_path, "-s","--metadata", "pagetitle=PDFuse", temp_md, "-o", html_path, NULL};
         GError *error = NULL;
         if (run_command(pandoc_argv, &error)) {
             // Вызываем weasyprint
