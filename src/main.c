@@ -1444,7 +1444,7 @@ static void about_cb(GtkWidget *widget, gpointer data) {
     gtk_container_add(GTK_CONTAINER(scrolled), text_view);
 
     // Блок с донатами
-    GtkWidget *donate_vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 2);
+    GtkWidget *donate_vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
 
     GdkRGBA bg_color;
     if (gdk_rgba_parse(&bg_color, "#e0e0e0")) {
@@ -1456,26 +1456,41 @@ static void about_cb(GtkWidget *widget, gpointer data) {
     gtk_widget_set_margin_top(donate_label, 5);
     gtk_widget_set_margin_bottom(donate_label, 5);
     gtk_widget_set_margin_start(donate_label, 10);
-    gtk_label_set_xalign(GTK_LABEL(donate_label), 0.0);
+    gtk_label_set_xalign(GTK_LABEL(donate_label), 0.5);
+
+    PangoAttrList *attrs = pango_attr_list_new();
+    pango_attr_list_insert(attrs, pango_attr_weight_new(PANGO_WEIGHT_BOLD));
+    gtk_label_set_attributes(GTK_LABEL(donate_label), attrs);
+    pango_attr_list_unref(attrs);
+
     gtk_box_pack_start(GTK_BOX(donate_vbox), donate_label, FALSE, FALSE, 0);
+
+    GtkWidget *github_btn = gtk_button_new_with_label(tr("about_github"));
+    g_signal_connect(github_btn, "clicked", G_CALLBACK(open_url), "https://github.com/JonGeorgia/pdf-builder");
+    gtk_widget_set_size_request(github_btn, -1, 25);
+    gtk_button_set_relief(GTK_BUTTON(github_btn), GTK_RELIEF_NONE);
+    gtk_widget_set_halign(github_btn, GTK_ALIGN_FILL);
+    gtk_widget_set_margin_start(github_btn, 10);
+    gtk_widget_set_margin_end(github_btn, 10);
+    gtk_box_pack_start(GTK_BOX(donate_vbox), github_btn, FALSE, FALSE, 0);
 
     GtkWidget *boosty_btn = gtk_button_new_with_label(tr("donate_boosty"));
     g_signal_connect(boosty_btn, "clicked", G_CALLBACK(open_url), "https://boosty.to/automatonlab");
     gtk_widget_set_size_request(boosty_btn, -1, 25);
     gtk_button_set_relief(GTK_BUTTON(boosty_btn), GTK_RELIEF_NONE);
-    gtk_widget_set_halign(boosty_btn, GTK_ALIGN_START);
+    gtk_widget_set_halign(boosty_btn, GTK_ALIGN_FILL);
     gtk_widget_set_margin_start(boosty_btn, 10);
     gtk_widget_set_margin_end(boosty_btn, 10);
-    gtk_box_pack_start(GTK_BOX(donate_vbox), boosty_btn, FALSE, FALSE, 2);
+    gtk_box_pack_start(GTK_BOX(donate_vbox), boosty_btn, FALSE, FALSE, 0);
 
     GtkWidget *kofi_btn = gtk_button_new_with_label(tr("donate_kofi"));
     g_signal_connect(kofi_btn, "clicked", G_CALLBACK(open_url), "https://ko-fi.com/automatonlab");
     gtk_widget_set_size_request(kofi_btn, -1, 25);
     gtk_button_set_relief(GTK_BUTTON(kofi_btn), GTK_RELIEF_NONE);
-    gtk_widget_set_halign(kofi_btn, GTK_ALIGN_START);
+    gtk_widget_set_halign(kofi_btn, GTK_ALIGN_FILL);
     gtk_widget_set_margin_start(kofi_btn, 10);
     gtk_widget_set_margin_end(kofi_btn, 10);
-    gtk_box_pack_start(GTK_BOX(donate_vbox), kofi_btn, FALSE, FALSE, 2);
+    gtk_box_pack_start(GTK_BOX(donate_vbox), kofi_btn, FALSE, FALSE, 0);
 
     gtk_widget_show_all(dialog);
 }
