@@ -1143,7 +1143,27 @@ static void generate_pdf_cb(GtkWidget *widget, gpointer data) {
             g_free(content);
         }
         // Вызываем pandoc
-        const gchar *pandoc_argv[] = {pandoc_path, "-s","--metadata", "pagetitle=PDFuse", temp_md, "-o", html_path, NULL};
+        // Фильтр для рендера формул (math2svg.py рядом с exe)
+        gchar *exe_dir_for_filter = get_exe_dir();
+        gchar *math_filter = g_build_filename(exe_dir_for_filter, "math2svg.py", NULL);
+        g_free(exe_dir_for_filter);
+        gboolean has_filter = g_file_test(math_filter, G_FILE_TEST_EXISTS);
+
+        const gchar *pandoc_argv_with_filter[] = {
+            pandoc_path, "-s",
+            "--metadata", "pagetitle=PDFuse",
+            "--filter", math_filter,
+            temp_md, "-o", html_path, NULL
+        };
+        const gchar *pandoc_argv_without_filter[] = {
+            pandoc_path, "-s",
+            "--metadata", "pagetitle=PDFuse",
+            temp_md, "-o", html_path, NULL
+        };
+        const gchar **pandoc_argv = has_filter
+            ? pandoc_argv_with_filter
+            : pandoc_argv_without_filter;
+
         GError *error = NULL;
         if (run_command(pandoc_argv, &error)) {
             // Вызываем weasyprint
@@ -1186,6 +1206,7 @@ static void generate_pdf_cb(GtkWidget *widget, gpointer data) {
         g_free(temp_md);
         g_free(html_path);
         g_free(pdf_path);
+        g_free(math_filter);
     }
 
     g_ptr_array_free(md_files, TRUE);
