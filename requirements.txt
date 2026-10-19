@@ -1,0 +1,4 @@
+# Python-зависимости PDFuse (для разработки и для AppImage)
+# Установка: python3 -m venv venv && venv/bin/pip install -r requirements.txt
+matplotlib>=3.8
+weasyprint>=60

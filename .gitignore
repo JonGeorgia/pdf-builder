@@ -21,3 +21,6 @@ appimage-build/*
 # Тесты и рабочие материалы (не часть релиза)
 Tests/
 docs/
+
+# Python venv для разработки
+venv/
