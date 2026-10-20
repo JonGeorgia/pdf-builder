@@ -13,10 +13,9 @@ settings.ini
 # Бэкапы
 *.tar.gz
 
-# Сборка AppImage — игнорируем всё, кроме конфигов
-appimage-build/*
-!appimage-build/pdf-builder-c.desktop
-!appimage-build/pdf-builder-c.png
+# Сборка AppImage — полностью игнорируется
+# (пересобирается заново; исходная иконка — assets/icons/pdfuse-256.png)
+appimage-build/
 
 # Тесты и рабочие материалы (не часть релиза)
 Tests/
