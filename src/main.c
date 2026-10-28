@@ -1698,6 +1698,7 @@ static void activate(GtkApplication *gtk_app, gpointer user_data) {
 // ========================
 
 int main(int argc, char **argv) {
+    g_set_prgname("PDFuse");
     GtkApplication *gtk_app = gtk_application_new("org.example.pdfbuilder",
                                                    G_APPLICATION_DEFAULT_FLAGS);
     g_signal_connect(gtk_app, "activate", G_CALLBACK(activate), NULL);
