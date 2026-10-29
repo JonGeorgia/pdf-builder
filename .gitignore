@@ -10,11 +10,11 @@ valgrind.log
 # Пользовательские настройки
 settings.ini
 
-# Бэкапы
+# Бэкапы и архивы
 *.tar.gz
+*.zip
 
 # Сборка AppImage — полностью игнорируется
-# (пересобирается заново; исходная иконка — assets/icons/pdfuse-256.png)
 appimage-build/
 
 # Тесты и рабочие материалы (не часть релиза)
@@ -23,3 +23,13 @@ docs/
 
 # Python venv для разработки
 venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Временные файлы редакторов и IDE
+*~
+*.swp
+.vscode/
+.idea/
